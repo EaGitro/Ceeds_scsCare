@@ -32,16 +32,20 @@ class VitalData:
         #バイタル更新
         self.HeartRate = self.value_p()
         self.OxygenPercent = self.value_o()
-
-    def make_json(self):
-        #jsonに変換
+    
+    def make_dictionary(self):
+        #辞書作成
         d = {
             'date':self.date,
             'HeartRate':self.HeartRate,
             'AverageSleepTime':self.AverageSleepTime,
             'OxygenPercent':self.OxygenPercent
         }
-        vital_json = json.dumps(d)
+        return d
+
+    def make_json(self):
+        #jsonに変換
+        vital_json = json.dumps(self.make_dictionary())
         return vital_json
     
 if __name__ == "__main__":
