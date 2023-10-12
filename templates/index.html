@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+    <title>scsk ceeds scsCare</title>
+
+</head>
+<body>
+    <div id="data">
+        <div id="temperature">
+            <div class="name">Temperature</div>
+            <div>
+                <span class="value value-css"></span>
+                <span class="value-css">[°C]</span>
+            </div>
+            <div class="heart"></div>
+        </div>
+        <div id="palse-rate">
+            <div class="name">Pulse rate</div>
+            <div>
+                <span class="value value-css"></span>
+                <span class="value-css">[bpm]</span>
+            </div>
+            <div class="heart"></div>
+        </div>
+        <div id="sleep-time">
+            <div class="name">Sleep time</div>
+            <div>
+                <span class="value value-css"></span>
+                <span class="value-css">[hour]</span>
+            </div>
+            <div class="heart"></div>  
+        </div>
+        <div id="blood-oxygen">
+            <div class="name">Blood oxygen</div>
+            <div>
+                <span class="value value-css"></span>
+                <span class="value-css">[%]</span>
+            </div>
+            <div class="heart"></div>
+        </div>
+        <div id="productibity">
+            <div class="name">Productibity</div>
+            <div class="value"></div>
+            <div class="heart"></div>
+        </div>    
+    </div>
+</body>
+    <script  type="text/javascript" src="{{ url_for('static', filename='../static/main.js') }}"></script>
+    <!-- <script src="../static/main.js"></script> -->
+</html>
