@@ -26,7 +26,7 @@ class VitalData:
 
     def value_s(self):
         #睡眠時間初期化
-        return (np.random.randint(0,8))
+        return (np.round(8 * np.random.rand(),decimals = 2))
 
     def value_o(self):
         #血中酸素濃度初期化
