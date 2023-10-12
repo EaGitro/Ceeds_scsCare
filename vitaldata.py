@@ -23,6 +23,7 @@ class VitalData:
         self.bool_AverageSleepTime = 0
         self.bool_OxygenPercent = 0
         
+        self.is_helth = 0
 
     def value_b(self):
         #体温初期化、更新
@@ -46,25 +47,37 @@ class VitalData:
         self.OxygenPercent = self.value_o()
     
     def bool_vital(self):
+        num_false = 0
         if self.BodyTemperature <= 37.5:
             self.bool_BodyTemperature = True
         else:
             self.bool_BodyTemperature = False 
-
+            num_false = num_false + 1
         if self.HeartRate  <= 100:
             self.bool_HeartRate = True
         else:
             self.bool_HeartRate = False 
+            num_false = num_false + 1
 
         if self.AverageSleepTime  >= 6:
             self.bool_AverageSleepTime = True
         else:
             self.bool_AverageSleepTime = False
+            num_false = num_false + 1
         
         if self.OxygenPercent >= 97:
             self.bool_OxygenPercent = True
         else:
             self.bool_OxygenPercent = False
+            num_false = num_false + 1
+        
+        if num_false < 3:
+            self.is_helth = True
+        
+        else:
+            self.is_helth = False
+
+        
 
         
     def make_dictionary(self):
@@ -76,6 +89,7 @@ class VitalData:
             'HeartRate':{'value':self.HeartRate,'bool':self.bool_HeartRate},
             'AverageSleepTime':{'value':self.AverageSleepTime,'bool':self.bool_AverageSleepTime},
             'OxygenPercent':{'value':self.OxygenPercent,'bool':self.bool_OxygenPercent},
+            'isHealth':self.is_helth
         }
         return d
 
