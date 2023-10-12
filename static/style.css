@@ -1,0 +1,90 @@
+body {
+    background-color: #2f2d2d;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    margin: 100px;
+}
+  
+#data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 700px;
+}
+  
+#temperature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#temperature > div {
+    flex: 1;
+    text-align: center;
+}
+  
+#palse-rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#palse-rate > div {
+    flex: 1;
+    text-align: center;
+}
+  
+#sleep-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#sleep-time > div {
+    flex: 1;
+    text-align: center;
+}
+  
+#blood-oxygen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#blood-oxygen > div {
+    flex: 1;
+    text-align: center;
+}
+  
+#productibity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#productibity > div {
+    flex: 1;
+    text-align: center;
+}
+  
+.name {
+    font-size: x-large;
+    font-weight: bold;
+    color: #edcece;
+}
+  
+.value {
+    font-size: x-large;
+    color: #edcece;
+}
+
+.value-css {
+    font-size: x-large;
+    color: #edcece;
+}
+  
+.heart {
+}
+  
