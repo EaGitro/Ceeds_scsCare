@@ -1,10 +1,14 @@
 from flask import Flask, render_template
+from flask_cors import CORS
+
 from vitaldata import VitalData
 
 app = Flask(__name__)
 vital = VitalData()
 
-@app.route('/todo-data')
+CORS(app)
+@app.route('/vital-data', methods = ["GET"])
+
 def index():
 
     vital.update_vital()
