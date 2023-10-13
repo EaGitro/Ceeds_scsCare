@@ -9,5 +9,24 @@
     <a href="/detail/{{ post.id }}" role="button">Detail</a>
     <a href="/delete/{{ post.id }}" role="button">Delete</a>
     <a href="/update/{{ post.id }}" role="button">Update</a>
+    <form action="/move-to-archive/{{post.id}}" method="GET">
+        <input type="submit" value="削除する"/>
+    </form>
+{% endfor %}
+
+<hr>
+<h2>
+    完了した Todo
+</h2>
+{% for archived in archiveds %}
+    <h2>タイトル : {{ archived.title }}</h2>
+    <p>期限 : {{ archived.due.date() }}</p>
+    <a href="/detail/{{ archived.id }}" role="button">Detail</a>
+    <a href="/delete/{{ archived.id }}" role="button">Delete</a>
+    <a href="/update/{{ archived.id }}" role="button">Update</a>
+    <form action="/return-to-post/{{archived.id}}" method="GET">
+        <input type="submit" value="archive から戻す"/>
+    </form>
+
 {% endfor %}
 {% endblock %}
