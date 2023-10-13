@@ -33,20 +33,29 @@ async function updateVital() {
 
 
     const vitalValueNodes = document.querySelectorAll(".value")
+    const heartImgNodes = document.querySelectorAll(".heart")
 
-    let cnt = 0
+    let vitalCnt = 0
+    let heartCnt = 0
     const dataNameArr = ["BodyTemperature", "HeartRate", "AverageSleepTime", "OxygenPercent"]
 
     console.log(vitalValueNodes)
     vitalValueNodes.forEach((x) => {
         console.log(x)
-        if(cnt < 4){
-            x.innerHTML = vitalJson[dataNameArr[cnt]]["value"]
-            cnt += 1
+        if (vitalCnt < 4) {
+            x.innerHTML = vitalJson[dataNameArr[vitalCnt]]["value"]
+            vitalCnt += 1
         }
     })
-    
-    
+
+    heartImgNodes.forEach((x) => {
+        console.log(x)
+        if (heartCnt < 4) {
+            x.innerHTML = vitalJson[dataNameArr[heartCnt]]["bool"]
+            heartCnt += 1
+        }
+    })
+
 
 
 
