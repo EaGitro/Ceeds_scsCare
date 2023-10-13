@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
 from vitaldata import VitalData
+from todo_achievement_1 import todo
 
 import json
 
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 db = SQLAlchemy(app)
 vital = VitalData()
+Todo = todo()
 #db
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -194,6 +196,10 @@ def vital_data():
 def index():
     return render_template("index.html")
 
+@app.route('/todo-data', methods = ["GET"])
+def todo_data():
+    Todo.update_prob()
+    return Todo.make_json()
 
 if __name__ == '__main__':
     app.debug = True
