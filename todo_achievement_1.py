@@ -10,7 +10,12 @@ import json
 #list_now = 12
 
 #-----------------------------------------------------
-
+def read_file(path):
+    f = open(path, mode = "r")
+    data = f.read()
+    f.close()
+    return data
+        
 class todo:
     def __init__(self):
         self.date = datetime.datetime.now().isoformat()
@@ -21,8 +26,14 @@ class todo:
 
 
     def list_prob(self):
-        list_now = 12 #todo実績
-        list_all = 20 #todo全体
+        #list_allは今日行うべきTo Doの個数 一応20個にしてある
+        #list_all = d.get("all_task_num")
+        json_data = read_file("./task_num.json")
+        obj_data = json.loads(json_data)
+        list_all = obj_data["all_task_num"] 
+        list_now = obj_data["now_task"]
+        #list _nowは今現在のTo Do実績　一応12個にしてある
+        #list_now = d.get("now_task_num")
         listprob = (list_now/list_all)*100
         return listprob
 
